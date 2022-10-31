@@ -7,6 +7,9 @@ Seeded from [this API](https://rapidapi.com/GiulianoCrescimbeni/api/football98).
 
 ## Usage
 
+Deployed website here:
+https://soccer-standings-api-production.up.railway.app/
+
 Endpoints:
 Right now you can search for a specific league by ID, but not specific teams inside the standings array. So you need to copy and paste the standings, then make edits.
 
@@ -32,11 +35,13 @@ let Team = new mongoose.Schema ({
     Winned: Number,
     Loosed: Number,
     Tie: Number,
-    "Goal Difference": Number
+    "Goal Difference": Number,
+    SquadLogo: String
 })
 
 let League = new mongoose.Schema({
     leagueName: String,
+    country: String,
     standings: [Team]
 })
 ```
