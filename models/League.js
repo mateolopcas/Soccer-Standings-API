@@ -8,13 +8,15 @@ let Team = new mongoose.Schema({
   Winned: Number,
   Loosed: Number,
   Tie: Number,
-  "Goal Difference": Number
+  "Goal Difference": Number,
+  SquadLogo: String
 })
 
 
 
 let League = new mongoose.Schema({
   leagueName: String,
+  country: String,
   standings: [Team]
 })
 
