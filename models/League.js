@@ -18,4 +18,4 @@ let League = new mongoose.Schema({
     standings: [Team]
 })
 
-export default mongoose.model("League", League)
+export default mongoose.model("league", League)
