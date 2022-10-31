@@ -4,7 +4,7 @@ import data from './seasons_data.json' assert {type: 'json'}
 
 async function insertData() {
     await League.deleteMany({})
-    await League.create(data)
+    await League.insertMany(data)
     await db.close()
 }
 
