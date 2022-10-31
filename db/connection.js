@@ -1,11 +1,18 @@
 import mongoose from "mongoose"
 
 let mongooseConfig = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 }
 
-mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/soccer_tables_API", mongooseConfig)
+const URI = process.env.MONGO_URI || "mongodb://localhost:27017/soccer_tables_API"
+
+mongoose.set("returnOriginal", false)
+
+mongoose.connect(URI, mongooseConfig)
+  .catch((err) => {
+    console.log(`Error: ${err.message}`)
+  })
 
 mongoose.connection.on('connected', () => console.log('Connected to database'))
 mongoose.connection.on('disconnected', () => console.log('Disconnected from database'))
