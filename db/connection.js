@@ -2,8 +2,6 @@ import mongoose from "mongoose"
 
 let mongooseConfig = {
     useNewUrlParser: true,
-    useCreateIndex:true,
-    useFindAndModify:true,
     useUnifiedTopology: true
 }
 
